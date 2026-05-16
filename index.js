@@ -34,3 +34,24 @@ function playRound(humanChoice, computerChoice){
     console.log(`Human Score: ${humanScore}`)
     console.log(`Computer Score: ${computerScore}`)
 }
+
+function playGame(){
+    for (let i=1; i<=5; i++){
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log("")
+    }
+    if(humanScore>computerScore){
+        console.log("----------- HUMAN WINS -----------")
+        console.log(`Final score: Human [${humanScore}] and computer [${computerScore}]`)
+    }
+    else if(computerScore>humanScore){
+        console.log("----------- COMPUTER WINS -----------")
+        console.log(`Final score: Computer [${computerScore}] human [${humanScore}]`)
+    }
+    else {
+        console.log("It is a tie!")
+        console.log(`Final score: Human [${humanScore}] computer [${computerScore}]`)
+    }
+}
+const btn = document.querySelector("button");
+btn.addEventListener("click", playGame)
